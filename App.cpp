@@ -6,7 +6,7 @@
 /*   By: ardayalman <ardayalman@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 03:12:12 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/13 05:53:49 by ardayalman       ###   ########.fr       */
+/*   Updated: 2023/01/13 15:33:41 by ardayalman       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,26 @@ void	App::go_exit( void )
 	system("clear");
 	system("stty cooked");
 	exit(EXIT_SUCCESS);
+}
+
+void	App::go_add_user( void )
+{
+	system("clear");
+	system("stty cooked");
+	cout << "lorem ipsum" << endl;
+	system("stty raw");
+	if(getchar())
+		return ;
+}
+
+void	App::go_search_user( void )
+{
+	system("clear");
+	system("stty cooked");
+	cout << "lorem ipsum" << endl;
+	system("stty raw");
+	if(getchar())
+		return ;
 }
 
 int	App::help_menu()
@@ -134,10 +154,18 @@ void	App::main_menu()
 		&App::search_user_menu,
 		&App::exit_menu
 	};
-	int exit= 1;
+	void (App::*go_function[5])() =
+	{
+		&App::go_help,
+		&App::go_spreadsheet,
+		&App::go_add_user,
+		&App::go_search_user,
+		&App::go_exit
+	};
+
 	int start = 0;
 	this->help_menu();
-	while(exit)
+	while(true)
 	{
 		system("stty raw");
 		char chars = getchar();
@@ -153,11 +181,7 @@ void	App::main_menu()
 				start++;
 				break;
 			case 13:
-				a.go_exit();
-				break;
-			case 88:
-				system("stty cooked");
-				exit = 0;
+				(a.*go_function[start])();
 				break;
 			default:
 				break;

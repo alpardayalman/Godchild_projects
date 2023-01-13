@@ -6,7 +6,7 @@
 /*   By: ardayalman <ardayalman@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 03:11:03 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/13 05:51:04 by ardayalman       ###   ########.fr       */
+/*   Updated: 2023/01/13 15:27:59 by ardayalman       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class App
 		string	getStringInput();
 		void	go_help( void );
 		void	go_spreadsheet( void );
+		void	go_add_user( void );
+		void	go_search_user( void );
 		void	go_exit( void );
 		void	main_menu();
 		int	help_menu();
