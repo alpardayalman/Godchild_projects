@@ -6,13 +6,15 @@
 /*   By: tacikgoz <tacikgoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 03:11:03 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/15 07:32:04 by tacikgoz         ###   ########.fr       */
+/*   Updated: 2023/01/15 07:49:05 by tacikgoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <file_in_out.hpp>
 // #include <curses.h>
 #define BACKGROUND_COLOR 40
 
@@ -36,4 +38,4 @@ class App
 };
 
 //filename for fd func
-string filename("data.csv");
+// string filename("data.csv");

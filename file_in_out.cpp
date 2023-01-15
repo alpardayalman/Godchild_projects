@@ -11,6 +11,8 @@ string  person::_notes_combiner_(vector<string> _note) {
 	return oss;
 }
 
+
+
 /*
 ifstream kutuphanesini kullanarak csv dosyasindan satir satir okuyup, person class'inin icindeki notes string vectorune dolduruyor
 */

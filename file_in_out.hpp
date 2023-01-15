@@ -1,9 +1,8 @@
 #ifndef FILE_IN_OUT_HPP
 #define FILE_IN_OUT_HPP
 
-#include <fstream>
-#include <iostream>
-#include <vector>
+#include "App.hpp"
+
 using namespace std;
 
 class person
