@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   App.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ardayalman <ardayalman@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ayalman <ayalman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 03:12:12 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/13 15:33:41 by ardayalman       ###   ########.fr       */
+/*   Updated: 2023/01/16 00:17:42 by ayalman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,15 @@ string	App::getStringInput()
 	return (str);
 }
 
-void	App::go_spreadsheet( void )
+void	App::go_spreadsheet( vector <Godchild> persons )
 {
+	(void) persons;
 	system("open https://docs.google.com/spreadsheets/d/1DUHfgcNckeIQccsA-KdO_YlWwX6J76GvvkHt_dLzTrA/edit#gid=0");
 }
 
-void	App::go_help( void )
+void	App::go_help( vector <Godchild> persons )
 {
+	(void) persons;
 	system("clear");
 	system("stty cooked");
 	cout << "lorem ipsum" << endl;
@@ -56,25 +58,17 @@ void	App::go_help( void )
 		return ;
 }
 
-void	App::go_exit( void )
+void	App::go_exit( vector <Godchild> persons )
 {
+	(void) persons;
 	system("clear");
 	system("stty cooked");
 	exit(EXIT_SUCCESS);
 }
 
-void	App::go_add_user( void )
+void	App::go_add_user( vector <Godchild> persons )
 {
-	system("clear");
-	system("stty cooked");
-	cout << "lorem ipsum" << endl;
-	system("stty raw");
-	if(getchar())
-		return ;
-}
-
-void	App::go_search_user( void )
-{
+	(void) persons;
 	system("clear");
 	system("stty cooked");
 	cout << "lorem ipsum" << endl;
@@ -143,7 +137,7 @@ int	App::exit_menu()
 	return (1);
 }
 
-void	App::main_menu()
+void	App::main_menu(vector <Godchild> persons)
 {
 	App a;
 	int (App::*function[5])() =
@@ -154,7 +148,7 @@ void	App::main_menu()
 		&App::search_user_menu,
 		&App::exit_menu
 	};
-	void (App::*go_function[5])() =
+	void (App::*go_function[5])(vector <Godchild>) =
 	{
 		&App::go_help,
 		&App::go_spreadsheet,
@@ -181,7 +175,7 @@ void	App::main_menu()
 				start++;
 				break;
 			case 13:
-				(a.*go_function[start])();
+				(a.*go_function[start])(persons);
 				break;
 			default:
 				break;

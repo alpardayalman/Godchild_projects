@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ardayalman <ardayalman@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ayalman <ayalman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 23:58:00 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/13 05:02:15 by ardayalman       ###   ########.fr       */
+/*   Updated: 2023/01/16 00:18:21 by ayalman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 using namespace std;
 int main()
 {
+	vector<Godchild> persons;
 	App a;
-	a.main_menu();
+	persons = take_input_from_csv("data.csv");
+	a.main_menu(persons);
 	return (0);
 }
