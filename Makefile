@@ -1,7 +1,8 @@
 NAME = executable
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = $(wildcard *.cpp)
+NONEED = test2.cpp test.cpp
+SRC = $(filter-out $(NONEED), $(wildcard *.cpp))
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
@@ -15,7 +16,7 @@ $(OBJ) :
 		@$(CC) $(CFLAGS) $(SRC) -c
 
 clean :
-		@rm -rf $(OBJ)
+		@rm $(OBJ)
 
 fclean : clean
 		@rm -rf $(NAME)
