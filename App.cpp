@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   App.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ardayalman <ardayalman@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tacikgoz <tacikgoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 03:12:12 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/13 15:33:41 by ardayalman       ###   ########.fr       */
+/*   Updated: 2023/01/15 07:29:40 by tacikgoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "App.hpp"
+#include "file_in_out.hpp"
 #include <unistd.h>
 #define BUG
 #ifndef BUG
