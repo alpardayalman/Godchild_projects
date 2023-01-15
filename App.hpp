@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   App.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ardayalman <ardayalman@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tacikgoz <tacikgoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 03:11:03 by ardayalman        #+#    #+#             */
-/*   Updated: 2023/01/13 15:27:59 by ardayalman       ###   ########.fr       */
+/*   Updated: 2023/01/15 07:32:04 by tacikgoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ class App
 		int	exit_menu();
 };
 
-
+//filename for fd func
+string filename("data.csv");
