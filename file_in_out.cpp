@@ -11,29 +11,36 @@ string  person::_notes_combiner_(vector<string> _note) {
 	return oss;
 }
 
+/*
+ifstream kutuphanesini kullanarak csv dosyasindan satir satir okuyup, person class'inin icindeki notes string vectorune dolduruyor
+*/
 vector<person>    take_input_from_csv() {
 	string line;
-	ifstream myReadFile("new.csv");
+	ifstream myReadFile("new.csv");//default flaglerle dosyayi aciyor
 	vector<person> persons;
 
 	if (myReadFile.is_open()) {
-		for (int index = 0; getline(myReadFile, line); index++) {
+		for (int index = 0; getline(myReadFile, line); index++)//myReadFile'dan line'a input aliyor
+		{
 			person a;
 			for (int i = 0, j = 0; line[j]; j++)
 			{
-				if (line[j] == ';' && j != 0)
+				if (line[j] == ';' && j != 0)//';'dan ayiriyor
 				{
-					a.notes.push_back(line.substr(i+1,j-i-1));
+					a.notes.push_back(line.substr(i+1,j-i-1));//line'i notes'a ekliyor
 					i = j;
 				}
 			}
-			persons.push_back(a);
+			persons.push_back(a);//a'yi personun arkasina ekliyor
 		}
 	}
-	myReadFile.close();
+	myReadFile.close();//dosyayi closeluyor
 	return persons;
 }
 
+/*
+csv dosyasini sifirlayip personun icindeki notes vectorundeki stringleri birlestirdikten sonra csv dosyasinin icine yazar
+*/
 void    set_data_to_csv(vector<person>& persons) {
 	ofstream file("new2.csv");
 
